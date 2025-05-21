@@ -23,5 +23,13 @@ pipeline {
                 sh "mvn package"
             }
         }
+
+        stage('SonarQube Analysis') {
+            steps {
+                withSonarQubeEnv('MySonarQube') {
+                  sh "${tool 'SonarScanner'}/bin/sonar-scanner"
+                }
+              }
+        }
     }
 }
