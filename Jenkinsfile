@@ -1,5 +1,5 @@
 pipeline {
-    
+    agent any   // ✅ This tells Jenkins: run this pipeline on any available executor
     tools {
         maven 'maven3'
         jdk 'jdk17'
